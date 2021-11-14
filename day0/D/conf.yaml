@@ -17,5 +17,7 @@ time limit: 1.0
 title:
   zh-cn: 内存操作大师
 type: program
-users: {}
+users:
+  zyb:
+    std: {expected: == 100, path: zyb/d.cpp}
 version: 2

@@ -30,9 +30,37 @@
 
 接下来，对于这些情况，可以将$p_m,p_c$分离变量如下（以第一种情况为例）:
 
-$ sum_{p_m,p_c} = (a_{p_{m}-1}-b_{p_m-1}+b_{p_{m}+t_m-1} -a_{p_m+t_m-1}) + (a_{p_c-1} + b_{p_c+t_c-1}-b_{p_{c}-1}-a_{p_{c}+t_{c}-1})+a_n \sim x_{p_{m}} + y_{p_{c}} +a_n $
+$ sum_{p_m,p_c} = (b_{p_{m}+t_m-1} -a_{p_m+t_m-1}+a_{p_{m}-1}-b_{p_m-1}) + (a_{p_c-1} -b_{p_c-1}+ b_{p_c+t_c-1}-a_{p_{c}+t_{c}-1})+a_n \sim x_{p_{m}} + y_{p_{c}} +a_n $
 
-枚举$p_m$,   化为：求满足 $y_{p_{c}}$ 不超过给定阈值$val-a_n-x_{p_m}$ 且 $p_c \in [p_m+t_m, n]$ 的 $p_c$数量 -> 离线后离散化+树状数组解决
+枚举$p_m$,   化为：求满足 $y_{p_{c}}$ 不超过给定阈值$val-a_n-x_{p_m}$ 且 $p_c \in [p_m+t_m, n-t_c+1]$ 的 $p_c$数量 
 
-其他同理，总体时间复杂度2个log。
+相似的，可以得到——
+
+对于第2种情况，
+
+$ sum_{p_m,p_c} = (c_{p_m+t_m-1}-b_{p_m+t_m-1}+a_{p_{m}-1}-b_{p_m-1})+(b_{p_c-1} -c_{p_c-1}+b_{p_c+t_c-1}-a_{p_{c}+t_{c}-1}) + a_n \sim x_{p_{m}} + y_{p_{c}} +a_n $
+
+枚举$p_m$,   化为：求满足 $y_{p_{c}}$ 不超过给定阈值$val-a_n-x_{p_m}$ 且 $p_c \in [p_m+1,  min(p_m+t_m-1, n-t_c+1)]$ 的 $p_c$数量 
+
+对于第3种情况，
+
+$ sum_{p_m,p_c} =  (c_{p_m+t_m-1}-b_{p_m+t_m-1}+b_{p_m-1}-c_{p_m-1}) + (a_{p_{c}-1}-b_{p_c-1}+ b_{p_c+t_c-1}-a_{p_{c}+t_{c}-1}) +a_n \sim x_{p_m}+y_{p_c}+a_n$
+
+枚举$p_m$,   化为：求满足 $y_{p_{c}}$ 不超过给定阈值$val-a_n-x_{p_m}$ 且 $p_c \in [max(1,p_m+t_m-t_c),min(p_m,n-t_c+1)]$ 的 $p_c$数量 
+
+对于第4种情况，
+
+$ sum_{p_m,p_c} =  (b_{p_m+t_m-1}-a_{p_m+t_m-1}+b_{p_m-1}-c_{p_m-1}) + (a_{p_{c}-1}-b_{p_c-1}+ c_{p_c+t_c-1}-b_{p_{c}+t_{c}-1}) +a_n \sim x_{p_m}+y_{p_c}+a_n$
+
+枚举$p_m$,   化为：求满足 $y_{p_{c}}$ 不超过给定阈值$val-a_n-x_{p_m}$ 且 $p_c \in [max(0,p_m-t_c)+1, p_m+t_m-t_c-1]$ 的 $p_c$数量 
+
+对于第5种情况，
+
+$ sum_{p_m,p_c} =  (b_{p_m+t_m-1}-a_{p_m+t_m-1}+a_{p_m-1}-b_{p_m-1}) + (a_{p_{c}-1}-b_{p_c-1}+ b_{p_c+t_c-1}-a_{p_{c}+t_{c}-1}) +a_n \sim x_{p_m}+y_{p_c}+a_n$
+
+枚举$p_m$,   化为：求满足 $y_{p_{c}}$ 不超过给定阈值$val-a_n-x_{p_m}$ 且 $p_c \in [1,p_m-t_c]$ 的 $p_c$数量
+
+
+
+离散化+树状数组即可解决，总体时间复杂度2个log。
 

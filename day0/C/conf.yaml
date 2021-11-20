@@ -8,7 +8,7 @@ compile:
   py: ""
 data:
   - cases:
-      [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     score: 100
 folder: problem
 memory limit: 512 MiB
@@ -21,6 +21,7 @@ title:
   zh-cn: 赛程制定
 type: program
 users:
-  std:
-    std: { expected: == 100, path: std/std.cpp }
+  marco_ch:
+    std: { expected: == 100, path: marco_ch/std.cpp }
+    bf: { expected: == 0, path: marco_ch/bf.cpp }
 version: 2

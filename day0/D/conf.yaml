@@ -2,7 +2,7 @@ args:
   n: 100000
 compile:
   c: -O2 -std=c11
-  cpp: -O2 -std=c++14
+  cpp: -O2 -std=c++11
   java: ''
   pas: -O2
   py: ''
@@ -23,4 +23,6 @@ type: program
 users:
   zyb:
     std: {expected: == 100, path: zyb/d.cpp}
+  ckw:
+    std: {expected: == 100, path: ckw/std.cpp}
 version: 2

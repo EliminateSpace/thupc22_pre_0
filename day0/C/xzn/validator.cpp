@@ -19,6 +19,7 @@ int main()
         assert(a[i]>=1 && a[i]<=1000000000);
         assert(b[i]>=1 && b[i]<=1000000000);
         assert(c[i]>=1 && c[i]<=1000000000);
+        assert(a[i]<b[i] && b[i]<c[i]);
     }
     return 0;
 }

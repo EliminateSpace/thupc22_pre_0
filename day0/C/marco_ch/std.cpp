@@ -119,6 +119,7 @@ int main (){
 	for (i=1;i<=n;i++)
 	{int x,y,z;
 	scanf ("%d%d%d",&x,&y,&z);
+	assert(1<=x&&x<y&&y<z&&z<=1000000000);
 	a[i]=a[i-1]+x;
 	b[i]=b[i-1]+y;
 	c[i]=c[i-1]+z;

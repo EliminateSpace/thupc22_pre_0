@@ -24,4 +24,7 @@ users:
   marco_ch:
     std: { expected: == 100, path: marco_ch/std.cpp }
     bf: { expected: == 0, path: marco_ch/bf.cpp }
+  xzn:
+    std: { expected: == 100, path: xzn/std.cpp }
+    bf: { expected: == 0, path: xzn/bf.cpp }
 version: 2

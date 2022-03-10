@@ -10,6 +10,8 @@
 
 现在给出 $L, R$，请你求出 $V=\{L, L+1, \cdots, R\}$ 的最小公倍树 $LCT(V)$。
 
+{{ s('input format') }}
+
 {{ self.input_file() }}
 
 输入仅一行，包括两个正整数 $L, R$。
@@ -26,9 +28,17 @@
 
 {{ self.title_sample_description() }}
 
-这是第一组数据的样例说明。
+其中一种最小公倍树上的边为 $(3, 4), (3, 5), (3, 6), (3, 7), (4, 8), (3, 9), (5, 10), (3, 11), (3, 12)$。
 
 {{ s('sample', 2) }}
+
+{{ self.sample_text() }}
+
+{{ s('sample', 3) }}
+
+{{ self.sample_text() }}
+
+{{ s('sample', 4) }}
 
 {{ self.sample_text() }}
 

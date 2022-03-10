@@ -32,12 +32,22 @@ f 的下一次巡演马上就要开始了，于是 S 又盘算着带大家去参
 
 {{ self.title_sample_description() }}
 
-这是第一组数据的样例说明。
+对答案有贡献的方案为：从点 $1$ 出发走到 $2, 3, 4$ 中的任意一个点并返回点 $1$。对于某个点 $i (i=2, 3,  4)$，走到点 $i$ 并返回点 $1$ 的概率为 $1/6$，而贡献为 $i$，故期望为 $$\frac{1}{6}\times (2+3+4) = \frac{3}{2}.$$
+
+由 $499122178 \times 2 = 998244356 \equiv 3 \pmod {998244353}$ 可知 $3/2$ 在模 $998,244,353$ 意义下为 $499,122,178$，所以正确输出为 $499,122,178$。
 
 {{ s('sample', 2) }}
+
+{{ self.sample_text() }}
+
+{{ self.title_sample_description() }}
+
+转换前的答案为 $1625/432\approx 3.761574$，而 $432\times 274979351 = 118791079632 \equiv 1625 \pmod{998244353}$，所以模意义下的答案为 $274979351$。
+
+{{ s('sample', 3) }}
 
 {{ self.sample_file() }}
 
 {{ s('subtasks') }}
 
- 对于 $100\%$ 的数据，保证 $1\le N\le 200$，$1\le T\le 200$，$1\le s_0\le N$，$1\le m_i\le N$，$\sum_{i=1}^N m_i\le 1200$，$1\le l_{i, j}\le N$，且 $\forall 1\le i\le N, \forall 1\le j_1<j_2\le m_i, l_{i, j_1}\ne l_{i, j_2}$。
+ 对于 $100\%$ 的数据，保证 $1\le N\le 100$，$1\le T\le 100$，$1\le s_0\le N$，$1\le m_i\le N$，$\sum_{i=1}^N m_i\le 5000$，$1\le l_{i, j}\le N$，且 $\forall 1\le i\le N, \forall 1\le j_1<j_2\le m_i, l_{i, j_1}\ne l_{i, j_2}$。

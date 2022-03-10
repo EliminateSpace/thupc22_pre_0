@@ -17,5 +17,8 @@ time limit: 1.0
 title:
   zh-cn: 最小公倍树
 type: program
-users: {}
+users:
+  ckw:
+    std: {expected: == 100, path: ckw/std.cpp}
+    bf: {expected: == 0, path: ckw/bf.cpp}
 version: 2

@@ -6,7 +6,7 @@
 
 {{ s('description') }}
 
-对于任意 $V\subset\mathbb{N}^*$，$|V|<+\infty$，构造一张无向完全图 $G=(V,E)$，其中 $(u, v)$ 的边权为 $\mathrm{lcm}(u, v)$。称 $G$ 的最小生成树为 $V$ 的最小公倍树（Lowest Common Tree）。
+对于任意 $V\subset\mathbb{N}^*$，$|V|<+\infty$，构造一张无向完全图 $G=(V,E)$，其中 $(u, v)$ 的边权为 $u,v$ 的最小公倍数 $\mathrm{lcm}(u, v)$。称 $G$ 的最小生成树为 $V$ 的最小公倍树（LCT, Lowest Common Tree）。
 
 现在给出 $L, R$，请你求出 $V=\{L, L+1, \cdots, R\}$ 的最小公倍树 $LCT(V)$。
 

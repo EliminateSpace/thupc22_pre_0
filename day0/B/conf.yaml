@@ -2,7 +2,7 @@ args:
   n: 1000
 compile:
   c: -O2 -std=c11
-  cpp: -O2 -std=c++14
+  cpp: -O2 -std=c++11
   java: ''
   pas: -O2
   py: ''
@@ -22,4 +22,7 @@ type: program
 users:
   chj:
     std: {expected: == 100, path: infinitesynthesis/std.cpp}
+  ckw:
+    std: {expected: == 100, path: ckw/std.cpp}
+    bf: {expected: == 0, path: ckw/bf.cpp}
 version: 2

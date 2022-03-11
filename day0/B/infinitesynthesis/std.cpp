@@ -62,8 +62,8 @@ int main(){
 			if (to[i] == u) break;
 		}
 		if (i < start[u + 1]) {
-			h[1][u] = 1;
-			for (j = 2; j <= T; ++j) h[j][u] = 0;
+			h[1][i] = 1;
+			for (j = 2; j <= T; ++j) h[j][i] = 0;
 		}
 	}
 	

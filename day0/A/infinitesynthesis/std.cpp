@@ -38,6 +38,10 @@ int main(){
 	long long ans = 0;
 	vector<int>::iterator it;
 	scanf("%d %d", &l, &r);
+	if (l == r) {
+		puts("0");
+		return 0;
+	}
 	len = r - l;
 	for (i = 1; i <= len; ++i) {
 		for (j = (l + i - 1) / i * i; j <= r; j += i) {

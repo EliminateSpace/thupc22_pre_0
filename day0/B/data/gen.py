@@ -15,14 +15,17 @@ def log(string):
 	with open("gen.log", "a") as f:
 		f.write("[{}] {}\n".format(datetime.datetime.now(), string))
 
-def genRandom(n, t, mlim, no_self_loop = False):
-	cnt = [1] * (n + 1)
-	i = n
-	while i < mlim:
-		x = random.randint(1, n)
-		if cnt[x] < n:
-			cnt[x] += 1
-			i += 1
+def genRandom(n, t, mlim, no_self_loop = False, even = True):
+	if even:
+		cnt = [mlim // n] * (n + 1)
+	else:
+		cnt = [1] * (n + 1)
+		i = n
+		while i < mlim:
+			x = random.randint(1, n)
+			if cnt[x] < n:
+				cnt[x] += 1
+				i += 1
 	next_list = [[]]
 	nodes = list((range(1, n + 1)))
 	if no_self_loop:
@@ -179,7 +182,7 @@ for i in range(1, TASK_NUM + 1):
 	# log("Subtask {} done. (test: {} - {}; pre: {} - {})".format(i, pre + 1, testcase.cnt, pre_pre + 1, precase.cnt))
 
 sample.skip(2)
-sample.gen(genRandom, 100, 100, 200, no_self_loop = True)
+sample.gen(genRandom, 100, 100, 600, no_self_loop = True, even = True)
 
 # for duck
 # os.system("mkdir download")
